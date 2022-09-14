@@ -32,4 +32,4 @@ const storage = new CloudinaryStorage({
 //     })
 // };
 
-module.exports = multer({ storage }).single('image');
+module.exports = multer({ storage });
