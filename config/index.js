@@ -19,14 +19,14 @@ const MONGO_URI = require("../utils/consts");
 module.exports = (app) => {
 
   app.set("trust proxy", 1);
-  app.use(cors())
-  // app.use(
-  //   cors({
-  //     credentials: true,
-  //     origin: process.env.ORIGIN,
-  //     optionSuccessStatus:200,
-  //   })
-  // );
+
+  app.use(
+    cors({
+      credentials: true,
+      origin: process.env.ORIGIN || "http://localhost:3000",
+      optionSuccessStatus:200,
+    })
+  );
 
   // In development environment the app logs
   app.use(logger("dev"));

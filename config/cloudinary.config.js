@@ -12,12 +12,24 @@ const storage = new CloudinaryStorage({
     cloudinary,
     params: {
         allowed_formats: ['jpg', 'jpeg', 'png'],
-        filename: function (req, res, cb) {
-            cb(null, res.originalname); // The file on cloudinary will have the same name as the original file name
-          },
         folder: "up-work" // The name of the folder in cloudinary
 
-     }
+    }
 });
- 
-module.exports = multer({ storage });
+
+function uploadFile(req, res, next) {
+    const upload = multer({ storage }).single('image');
+
+    upload(req, res, function (err) {
+        if (err) {
+
+            return res.status(400).json({
+                message: "An error occurred while uploading your image. Check your file format and size. Only jpeg, jpg and png formats allowed."
+            });
+        }
+
+        next()
+    })
+};
+
+module.exports = uploadFile;
