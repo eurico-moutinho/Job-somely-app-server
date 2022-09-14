@@ -17,7 +17,7 @@ const storage = new CloudinaryStorage({
     }
 });
 
-function uploadFile(req, res, next) {
+const uploadFile=(req, res, next) => {
     const upload = multer({ storage }).single('image');
 
     upload(req, res, function (err) {
@@ -32,4 +32,4 @@ function uploadFile(req, res, next) {
     })
 };
 
-module.exports = uploadFile;
+module.exports = uploadFile();
