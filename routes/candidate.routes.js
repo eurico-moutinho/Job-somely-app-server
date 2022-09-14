@@ -19,7 +19,7 @@ router.get('/candidates', (req, res, next) => {
 });
 
 //CREATE new candidate
-router.post("/upload", [isAuthenticated, fileUploader], (req, res, next) => {
+router.post("/upload", isAuthenticated, (req, res, next) => {
     // console.log("file is: ", req.file)
 
     if (!req.file) {

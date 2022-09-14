@@ -114,7 +114,7 @@ router.post("/signup", (req, res) => {
 
 router.post("/login", (req, res, next) => {
     const { username, password } = req.body;
-
+    console.log('test')
     if (!username) {
         return res
             .status(400)
