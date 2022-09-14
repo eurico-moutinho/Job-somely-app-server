@@ -12,6 +12,9 @@ const storage = new CloudinaryStorage({
     cloudinary,
     params: {
         allowed_formats: ['jpg', 'jpeg', 'png'],
+        filename: function (req, res, cb) {
+            cb(null, res.originalname); // The file on cloudinary will have the same name as the original file name
+          },
         folder: "up-work" // The name of the folder in cloudinary
 
      }
