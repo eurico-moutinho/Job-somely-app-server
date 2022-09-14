@@ -20,7 +20,7 @@ router.get('/candidates', (req, res, next) => {
 
 //CREATE new candidate
 router.post("/upload", isAuthenticated, (req, res, next) => {
-    // console.log("file is: ", req.file)
+    console.log("file is: ", req.file)
 
     if (!req.file) {
         res.status(400).json({ message: "No file uploaded!" });
