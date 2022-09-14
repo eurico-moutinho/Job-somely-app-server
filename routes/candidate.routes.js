@@ -20,7 +20,7 @@ router.get('/candidates', (req, res, next) => {
 
 //CREATE new candidate
 router.post("/upload", fileUploader.single("image"), (req, res, next) => {
-    console.log("file is: ", req.file)
+    console.log("file is: ", req.body)
 
     if (!req.file) {
         res.status(400).json({ message: "No file uploaded!" });
