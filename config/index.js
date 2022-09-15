@@ -38,6 +38,7 @@ module.exports = (app) => {
         return res.sendStatus(200)
     }
     return next()
+  })
 
   // In development environment the app logs
   app.use(logger("dev"));
