@@ -146,7 +146,7 @@ router.get('/myprofile', isAuthenticated, (req, res, next) => {
                     location: "",
                     about: "",
                     skills: "",
-                    image: "",
+                    imageUrl: "",
                     linkedin: "",
                     owner: ownerId
                 }
