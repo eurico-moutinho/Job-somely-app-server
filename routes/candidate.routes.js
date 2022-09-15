@@ -39,7 +39,7 @@ router.post('/candidates', isAuthenticated, (req, res, next) => {
         location,
         about,
         skills,
-        image,
+        imageUrl,
         linkedin,
         
     } =req.body
@@ -53,7 +53,7 @@ router.post('/candidates', isAuthenticated, (req, res, next) => {
         location,
         about,
         skills,
-        image,
+        imageUrl,
         linkedin,
         owner: req.payload._id})
         .then(response => {

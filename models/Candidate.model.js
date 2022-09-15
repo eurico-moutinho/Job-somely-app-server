@@ -46,7 +46,7 @@ const candidateSchema = new Schema(
             required: true,
             trim: true
         },
-        image: {
+        imageUrl: {
             type: String
         },
         linkedin: {
